@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<title>Landing page</title>
+</head>
+<body>
+  <div class="wrapper">
+    <nav class="menu">
+      <button aria-expanded="false" aria-controls="menu-list">
+        <span class="open">☰</span>
+        <span class="close">×</span>
+        Menu
+      </button>
+      <ul id="menu-list">
+        <li><a href="">menu</a></li>
+        <li><a href="">beers</a></li>
+        <li><a href="">wines</a></li>
+        <li><a href="">desserts</a></li>
+        <li><a href="">reservations</a></li>
+      </ul>
+    </nav>
+	<div>
+    <div class="top">
+    <header class="banner"></header>
+      <div class="price price1">
+        <p class="price-text">$1.5</p>
+        <p>Seafood</p>
+      </div>
+      <div class="price price2">
+        <p class="price-text">$0.99</p>
+        <p>Seafood_2</p>
+      </div>
+    </div>  
+    <section class="features">
+      <div class="feature">
+        <span class="icon">🦐</span>
+        <h3>Menu</h3>
+        <p>more details</p>
+      </div>
+      <div class="feature">
+        <span class="icon">🍺</span>
+        <h3>Beer</h3>
+        <p>more details</p>
+      </div>
+      <div class="feature">
+        <span class="icon">🍷</span>
+        <h3>Wine</h3>
+        <p>more details</p>
+      </div>
+    </section>
+    <section class="about">
+      <img src="pic/true_price_1.jpg" class="img" alt="best offer">
+      <div class="info">
+        <h3>Seafood restraunt</h3>
+        <p>The secret of restraunt True Price's cuisine is based on a menu, designed with the fundamental recipes of traditional seafood cooking, what has converted it into one of the best restraunts in Ukraine.</p>
+        <button>more info</button>
+      </div>
+    </section>
+    <section class="gallery">
+      <h2>Responsive Grid Gallery</h2>
+      <img src="pic/true_price_1.jpg" class="pic-1" alt="">
+      <img src="pic/true_price_9.jpg" class="pic-9" alt="">
+      <img src="pic/true_price_11.jpg" class="pic-11" alt="">
+      <img src="pic/true_price_8.jpg" class="pic-8" alt="">
+      <img src="pic/true_price_banner.jpg" class="pic-banner" alt="">
+      <img src="pic/true_price_10.jpg" class="pic-10" alt="">
+      <img src="pic/true_price_12.jpg" class="pic-12" alt="">
+      <img src="pic/true_price_13.jpg" class="pic-13" alt="">
+      <img src="pic/true_price_14.jpg" class="pic-14" alt="">
+    </section>
+	</div>
+  </div>
+
+  <script>
+    const navButton = document.querySelector('button[aria-expanded]');
+
+    function toggleNav({ target }) {
+      const expanded = target.getAttribute('aria-expanded') === 'true' || false;
+      navButton.setAttribute('aria-expanded', !expanded);
+    }
+
+    navButton.addEventListener('click', toggleNav);
+  </script>
+
+</body>
+</html>

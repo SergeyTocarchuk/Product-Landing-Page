@@ -1,0 +1,281 @@
+.red {
+    border: 1px solid red;
+}
+
+.green {
+    border: 1px solid green;
+}
+
+.yellow {
+    border: 1px solid yellow;
+}
+
+html {
+    /* border-box box model allows us to add padding and border to our elements without increasing their size */
+    box-sizing: border-box;
+}
+
+body {
+    background-image: linear-gradient(to right, #494e54, #1c222a);
+    padding: 20px;
+}
+
+button {
+    background: #edb021;
+    border: 0;
+    padding: 10px 20px;
+}
+
+.menu ul {
+    display: grid;
+    grid-gap: 10px;
+    padding: 0;
+    list-style: none;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+  
+  .menu a {
+    background: #edb021;
+    display: block;
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+    color: var(--black);
+    text-transform: uppercase;
+    font-size: 20px;
+  }
+  
+  [aria-controls="menu-list"] {
+    display: none;
+  }
+
+.wrapper {
+    display: grid;
+    grid-gap: 20px;
+}
+
+.top {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-areas: "banner banner banner banner price1"
+                        "banner banner banner banner price2";
+    padding: 10px;
+}
+
+.banner {
+    background: white url("pic/true_price_banner.jpg");
+    background-size: cover;
+    background-position: center;
+    grid-area: banner;
+    min-height: 400px;
+}
+
+.price {
+    display: grid;
+    background: #edb021;
+    align-items: center;
+    justify-items: center;
+    align-content: center;
+}
+
+.price1 {
+    grid-area: price1;
+}
+
+.price2 {
+    grid-area: price2;
+}
+
+.price-text {
+    font-size: 60px;
+    font-weight: 300;
+}
+
+.price p {
+    margin: 0;
+}
+
+.features {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    padding: 10px;
+}
+
+.feature {
+    background: white;
+    padding: 10px;
+    border: 1px solid #edb021;
+    text-align: center;
+}
+
+.feature .icon {
+    font-size: 50px;
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    grid-gap: 20px;
+    background: white;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #edb021;
+}
+
+.about .info {
+    padding: 50px;
+}
+
+.img {
+    max-width: 75%;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(9, 5vw);
+    grid-gap: 10px;
+    border: 1px solid orange;
+    padding: 10px;
+    border: 1px solid #edb021;
+}
+
+.gallery h2 {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-gap: 20px;
+    grid-column: 1 / -1;
+    align-items: center;
+    color: #edb021;
+}
+
+.gallery h2:before, .gallery h2:after {
+    content: '';
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pic-banner {
+  grid-column-start: 1;
+  grid-column-end: 7;
+  grid-row-start: 4;
+  grid-row-end: 8;
+}
+
+.pic-1 {
+  grid-column-start: 7;
+  grid-column-end: 9;
+  grid-row-start: 2;
+  grid-row-end: 8;
+}
+
+.pic-9 {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+.pic-11 {
+      grid-column-start: 3;
+      grid-column-end: 5;
+      grid-row-start: 2;
+      grid-row-end: 4;
+}
+
+.pic-8 {
+  grid-column-start: 5;
+  grid-column-end: 7;
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+
+.pic-10 {
+  grid-column-start: 7;
+  grid-column-end: 9;
+  grid-row-start: 8;
+  grid-row-end: 10;
+}
+
+.pic-14 {
+grid-column-start: 5;
+grid-column-end: 7;
+grid-row-start: 8;
+grid-row-end: 10;
+}
+
+.pic-13 {
+grid-column-start: 3;
+grid-column-end: 5;
+grid-row-start: 8;
+grid-row-end: 10;
+}
+
+.pic-12 {
+grid-column-start: 1;
+grid-column-end: 3;
+grid-row-start: 8;
+grid-row-end: 10;
+}
+
+@media (max-width: 1000px) {
+    .menu {
+      perspective: 800px;
+    }
+    [aria-controls="menu-list"] {
+      display: block;
+      margin-bottom: 10px;
+    }
+  
+    .menu ul {
+      max-height: 0;
+      overflow: hidden;
+      transform: rotateX(90deg);
+      transition: all 0.5s;
+    }
+  
+    [aria-expanded="true"] ~ ul {
+      display: grid;
+      max-height: 500px;
+      transform: rotateX(0);
+    }
+  
+    [aria-expanded="false"] .close {
+      display: none;
+    }
+  
+    [aria-expanded="true"] .close {
+      display: inline-block;
+    }
+  
+    [aria-expanded="true"] .open {
+      display: none;
+    }
+  
+  }
+  
+  @media (max-width: 700px) {
+    .top {
+      grid-template-areas:
+        "banner banner"
+        "price1 price2"
+    }
+    /* About */
+    .about {
+      grid-template-columns: 1fr;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .top {
+      grid-template-areas:
+        "banner"
+        "price1"
+        "price2"
+    }
+  }
